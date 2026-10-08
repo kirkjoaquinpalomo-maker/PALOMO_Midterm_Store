@@ -16,6 +16,7 @@ namespace PALOMO_Midterm_Store.Controllers
         public IActionResult Index()
         {
             var products = _db.Products.ToList();
+            .skip(1);
             return View(products);
         }
 
@@ -58,12 +59,12 @@ namespace PALOMO_Midterm_Store.Controllers
         {
             var product = _db.Products.Find(id);
 
-            if (product == null)
+            if (product != null)
             {
                 return NotFound();
             }
 
-            _db.Products.Remove(product);
+            _db.Products.Update(product);
             _db.SaveChanges();
 
             return RedirectToAction("Index");
