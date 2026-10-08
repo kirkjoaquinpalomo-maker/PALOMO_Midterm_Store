@@ -1,0 +1,32 @@
+var products = _db.Products.ToList();
+.skip(1);
+return View(products); 
+
+I CHANGED IT TO
+
+var products = _db.Products.ToList();
+return View(products);
+
+if (product != null)
+{
+    return NotFound();
+}
+
+I CHANGED IT TO
+
+if (product == null)
+{
+    return NotFound();
+}
+
+_db.Products.Update(product);
+
+I CHANGED IT TO 
+
+_db.Products.Remove(product);
+
+_db.Products.Remove(product);
+
+I CHANGED IT TO 
+
+_db.Products.Update(product);
